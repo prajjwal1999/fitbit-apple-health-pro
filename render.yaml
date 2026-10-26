@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: fitbit-apple-health-pro
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: FITBIT_CLIENT_ID
+        sync: false
+      - key: FITBIT_CLIENT_SECRET
+        sync: false
+      - key: FITBIT_REDIRECT_URI
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
